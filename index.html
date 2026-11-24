@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أهمية اللياقة البدنية - عرض تقديمي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1f4068, #162447);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e43f5a;
+            text-align: center;
+        }
+
+        p, ul {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: right;
+            margin: 0 auto;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        li::before {
+            content: "✔";
+            position: absolute;
+            right: 0;
+            color: #e43f5a;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #e43f5a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d6304d;
+        }
+
+        button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto 0;
+            text-align: center;
+            text-decoration: none;
+            background-color: #10b981;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .cta-btn:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- الشريحة الأولى -->
+        <div class="slide active">
+            <h1>اطلق طاقاتك: قوة اللياقة البدنية</h1>
+            <p>اللياقة البدنية ليست مجرد مظهر خارجي، بل هي نمط حياة متكامل يعزز صحتك العامة، يصفّي ذهندك، ويزيد من مستويات طاقتك اليومية لتواجه تحديات الحياة بثقة وحيوية.</p>
+        </div>
+
+        <!-- الشريحة الثانية -->
+        <div class="slide">
+            <h1>تناغم العقل والجسم</h1>
+            <p>اكتشف الفوائد المزدوجة لممارسة التمارين الرياضية بانتظام:</p>
+            <div style="text-align: center;">
+                <ul>
+                    <li><strong>الصحة الجسدية:</strong> تقوية عضلة القلب، تعزيز المناعة، وضمان حياة أطول وأكثر صحة.</li>
+                    <li><strong>الصحة النفسية:</strong> تقليل التوتر، إفراز هرمونات السعادة (الإندورفين)، وتحسين جودة النوم.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- الشريحة الثالثة -->
+        <div class="slide">
+            <h1>غذي يومك: اللياقة والإنتاجية</h1>
+            <p>اربط بين لياقتك البدنية وأدائك اليومي في العمل والحياة. الحركة المستمرة تزيد من تركيزك، تقاوم الإرهاق، وتمنحك التحمل اللازم لإنجاز مهامك بكفاءة عالية.</p>
+        </div>
+
+        <!-- الشريحة الرابعة -->
+        <div class="slide">
+            <h1>ابدأ رحلتك اليوم</h1>
+            <p>لا تنتظر غداً! اتخذ خطوتك الأولى الآن عبر البدء بخطوات بسيطة وثابتة، وحافظ على الاستمرارية باختيار الأنشطة التي تستمتع بها.</p>
+            <a href="#" class="cta-btn" onclick="alert('أهلاً بك في عالم اللياقة!')">ابدأ الآن</a>
+        </div>
+
+        <!-- أزرار التنقل -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)" disabled>السابق</button>
+            <button id="nextBtn" onclick="changeSlide(1)">التالي</button>
+        </div>
+        
+        <div class="slide-counter" id="counter">الشريحة 1 من 4</div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('counter');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            counter.innerText = `الشريحة ${currentSlide + 1} من ${slides.length}`;
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+            updateSlide();
+        }
+    </script>
+
+</body>
+</html>
